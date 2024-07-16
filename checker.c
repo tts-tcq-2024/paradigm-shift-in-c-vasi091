@@ -42,7 +42,7 @@ int performAllChecks(Check* checks, int numChecks) {
     return 1;
 }
 
-int batteryIsOk(float temperature, float soc, float chargeRate) {
+int batteryIsOkChecks(float temperature, float soc, float chargeRate) {
     Check checks[] = {
         {isTemperatureInRange, temperature, "Temperature out of range!\n"},
         {isSocInRange, soc, "State of Charge out of range!\n"},
@@ -52,11 +52,19 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
     return performAllChecks(checks, numChecks);
 }
 
-int main() {
+int batteryIsOk(float temperature, float soc, float chargeRate) {
+    return batteryIsOkChecks(temperature, soc, chargeRate);
+}
+
+void runTests() {
     assert(batteryIsOk(25, 70, 0.7));
     assert(!batteryIsOk(50, 85, 0));
     assert(!batteryIsOk(30, 85, 0));
     assert(!batteryIsOk(25, 70, 0.9));
     printf("All tests passed!\n");
+}
+
+int main() {
+    runTests();
     return 0;
 }
