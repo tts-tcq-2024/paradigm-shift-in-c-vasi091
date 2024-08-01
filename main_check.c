@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <stdio.h>
-#include "check.h"
-#include "language.h"
+#include "battery_check.h"
+#include "language_support.h"
 
 void runTests() {
     assert(batteryIsOk(25, 70, 0.7));
