@@ -1,4 +1,4 @@
-#include "language.h"
+#include "language_support.h"
 #include <stdio.h>
 
 // Global variable for the current language
