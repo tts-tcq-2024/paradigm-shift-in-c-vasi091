@@ -1,5 +1,5 @@
-#include "check.h"
-#include "language.h"
+#include "battery_check..h"
+#include "language_support.h"
 #include <stdio.h>
 
 int isTemperatureInRange(float temperature) {
